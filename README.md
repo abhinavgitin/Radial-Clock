@@ -31,4 +31,3 @@ script.js    # Clock logic and DOM updates for hands and textual time
 
 ## Browser Support
 Tested on the latest versions of Chrome, Edge, and Firefox. The project uses modern layout features such as `flex` and `aspect-ratio`, so ensure polyfills if broader support is needed.
-
