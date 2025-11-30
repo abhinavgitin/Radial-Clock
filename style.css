@@ -1,0 +1,168 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: radial-gradient(circle at top, #0ea5e9 0%, #0f172a 55%, #020617 100%);
+	color: #e2e8f0;
+	gap: 3rem;
+	padding: 2rem;
+}
+
+header h1 {
+	font-size: clamp(2rem, 5vw, 3rem);
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.clock {
+	position: relative;
+	width: min(80vw, 360px);
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	border: 8px solid rgba(14, 165, 233, 0.4);
+	background: radial-gradient(circle, rgba(15, 23, 42, 0.95) 0%, rgba(2, 6, 23, 0.95) 55%);
+	box-shadow: 0 25px 45px rgba(0, 0, 0, 0.45), inset 0 8px 16px rgba(255, 255, 255, 0.06);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	--number-offset: -6px;
+}
+
+.clock::after {
+	content: "";
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: #38bdf8;
+	box-shadow: 0 0 18px rgba(56, 189, 248, 0.7);
+}
+
+.hand {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform-origin: 50% 100%;
+	transform: translate(-50%, -100%) rotate(0deg);
+	border-radius: 999px;
+	backdrop-filter: blur(3px);
+}
+
+.hand.hour {
+	width: 10px;
+	height: 28%;
+	background: linear-gradient(to bottom, #22d3ee, #0f172a);
+	box-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
+}
+
+.hand.minute {
+	width: 6px;
+	height: 38%;
+	background: linear-gradient(to bottom, #f472b6, #0f172a);
+	box-shadow: 0 0 10px rgba(244, 114, 182, 0.4);
+}
+
+.hand.second {
+	width: 3px;
+	height: 42%;
+	background: #facc15;
+	box-shadow: 0 0 12px rgba(250, 204, 21, 0.6);
+}
+
+.number {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	transform: rotate(var(--rotation));
+	padding-top: 6%;
+	pointer-events: none;
+}
+
+.number span {
+	transform: translateY(var(--number-offset)) rotate(calc(-1 * var(--rotation)));
+	font-size: clamp(1.1rem, 3vw, 1.5rem);
+	color: #97c4e3;
+	letter-spacing: 0.05em;
+	text-shadow: 0 2px 6px rgba(2, 132, 199, 0.55);
+}
+
+.number1 {
+	--rotation: 30deg;
+}
+
+.number2 {
+	--rotation: 60deg;
+}
+
+.number3 {
+	--rotation: 90deg;
+}
+
+.number4 {
+	--rotation: 120deg;
+}
+
+.number5 {
+	--rotation: 150deg;
+}
+
+.number6 {
+	--rotation: 180deg;
+}
+
+.number7 {
+	--rotation: 210deg;
+}
+
+.number8 {
+	--rotation: 240deg;
+}
+
+.number9 {
+	--rotation: 270deg;
+}
+
+.number10 {
+	--rotation: 300deg;
+}
+
+.number11 {
+	--rotation: 330deg;
+}
+
+.number12 {
+	--rotation: 0deg;
+}
+
+footer p {
+	font-size: clamp(1.1rem, 3vw, 1.4rem);
+	letter-spacing: 0.08em;
+}
+
+@media (max-width: 480px) {
+	body {
+		gap: 2rem;
+	}
+
+	.clock {
+		border-width: 6px;
+	}
+}
