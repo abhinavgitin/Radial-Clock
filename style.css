@@ -4,6 +4,15 @@
 	padding: 0;
 }
 
+:root {
+	--color-bg-primary: #0d1117;
+	--color-bg-secondary: #24292e;
+	--color-text-primary: #e2e8f0;
+	--color-text-muted: #8b949e;
+	--color-text-bright: #c9d1d9;
+	--color-accent: #58a6ff;
+}
+
 body {
 	font-family: "Cascadia Code", "Fira Code", "Consolas", monospace;
 	min-height: 100vh;
@@ -11,8 +20,8 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background: radial-gradient(circle at top, #0ea5e9 0%, #0f172a 55%, #020617 100%);
-	color: #e2e8f0;
+	background: linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+	color: var(--color-text-primary);
 	gap: 3rem;
 	padding: 2rem;
 }
@@ -35,9 +44,9 @@ main {
 	width: min(80vw, 360px);
 	aspect-ratio: 1 / 1;
 	border-radius: 50%;
-	border: 8px solid rgba(14, 165, 233, 0.4);
-	background: radial-gradient(circle, rgba(15, 23, 42, 0.95) 0%, rgba(2, 6, 23, 0.95) 55%);
-	box-shadow: 0 25px 45px rgba(0, 0, 0, 0.45), inset 0 8px 16px rgba(255, 255, 255, 0.06);
+	border: 8px solid rgba(139, 148, 158, 0.3);
+	background: radial-gradient(circle, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+	box-shadow: 0 25px 45px rgba(0, 0, 0, 0.5), inset 0 8px 16px rgba(255, 255, 255, 0.03);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -50,8 +59,8 @@ main {
 	width: 18px;
 	height: 18px;
 	border-radius: 50%;
-	background: #38bdf8;
-	box-shadow: 0 0 18px rgba(56, 189, 248, 0.7);
+	background: var(--color-text-muted);
+	box-shadow: 0 0 12px rgba(139, 148, 158, 0.5);
 }
 
 .hand {
@@ -67,22 +76,22 @@ main {
 .hand.hour {
 	width: 10px;
 	height: 28%;
-	background: linear-gradient(to bottom, #22d3ee, #0f172a);
-	box-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
+	background: linear-gradient(to bottom, var(--color-text-bright), var(--color-bg-secondary));
+	box-shadow: 0 0 8px rgba(201, 209, 217, 0.3);
 }
 
 .hand.minute {
 	width: 6px;
 	height: 38%;
-	background: linear-gradient(to bottom, #f472b6, #0f172a);
-	box-shadow: 0 0 10px rgba(244, 114, 182, 0.4);
+	background: linear-gradient(to bottom, var(--color-text-muted), var(--color-bg-secondary));
+	box-shadow: 0 0 8px rgba(139, 148, 158, 0.3);
 }
 
 .hand.second {
 	width: 3px;
 	height: 42%;
-	background: #facc15;
-	box-shadow: 0 0 12px rgba(250, 204, 21, 0.6);
+	background: var(--color-accent);
+	box-shadow: 0 0 10px rgba(88, 166, 255, 0.4);
 }
 
 .number {
@@ -99,9 +108,9 @@ main {
 .number span {
 	transform: translateY(var(--number-offset)) rotate(calc(-1 * var(--rotation)));
 	font-size: clamp(1.1rem, 3vw, 1.5rem);
-	color: #97c4e3;
+	color: var(--color-text-muted);
 	letter-spacing: 0.05em;
-	text-shadow: 0 2px 6px rgba(2, 132, 199, 0.55);
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .number1 {
